@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta viewport="width = device-width, initial-scale 1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin. />
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <script src="js/main.js"></script>
+        <script src="js/ia.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/result.js"></script>
+        <script src="js/difficulty.js"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png" />
+        <title>Coinc tac toe</title>
+    </head>
+    <body>
+        <main class="card" id="card">
+            <div class="gridRow1">
+                <div class="screen" id="playerScreen"></div>
+                <div class="screen" id="turnScreen"></div>
+                <div class="screen" id="cpuScreen"></div>
+                </div>
+            </div>
+            <div class="gridRow2">
+                <button class="box row1 col1 diag1" id="topLeft" onclick="setUserSymbol('topLeft')"></button>
+                <button class="box row1 col2" id="topMiddle" onclick="setUserSymbol('topMiddle')"></button>
+                <button class="box row1 col3 diag2" id="topRight" onclick="setUserSymbol('topRight')"></button>
+            </div>
+            <div class="gridRow3">
+                <button class="box row2 col1" id="middleLeft" onclick="setUserSymbol('middleLeft')"></button>
+                <button class="box row2 col2 diag1 diag2" id="center" onclick="setUserSymbol('center')"></button>
+                <button class="box row2 col3" id="middleRight" onclick="setUserSymbol('middleRight')"></button>
+            </div>
+            <div class="gridRow4">
+                <button class="box row3 col1 diag2" id="bottomLeft" onclick="setUserSymbol('bottomLeft')"></button>
+                <button class="box row3 col2" id="bottomMiddle" onclick="setUserSymbol('bottomMiddle')"></button>
+                <button class="box row3 col3 diag1" id="bottomRight" onclick="setUserSymbol('bottomRight')"></button>
+            </div>
+            <div class="gridRow5">
+                <div class="screen" id="playerWin">0 WIN</div>
+                <div class="screen" id="ties">0 TIE</div>
+                <div class="screen" id="cpuWin">0 WIN</div>
+            </div>
+        </main>
+        <img src="img/settings.svg" width="30px" height="30px" id="settings" onclick="displaySettings()"></img>
+        <div class="slide-div hidden" id="settings-div">
+            <h2>Difficulty :</h2>
+            <input type="range" min="0" max="100" value="50" onchange="setDifficulty()" id="difficulty-slider" />
+        </div>
+    </body>
+</html>
